@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Overseer",
+    "name": "Overseer",
+    "image": "ghcr.io/linuxserver/overseer:latest",
+    "description": "",
+    "categories": [],
+    "platform": "linux",
+    "note": "",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "5055:5055/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config"
+      }
+    ],
+    "env": [],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [],
+    "cap_add": [],
+    "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/overseerr-logo.png"
+  },
+  {
+    "title": "UptimeKuma",
+    "name": "UptimeKuma",
+    "image": "louislam/uptime-kuma",
+    "description": "Self-hosted monitoring tool like \"Uptime Robot\".  \nMonitoring uptime for HTTP(s) / TCP / Ping. \nFancy, Reactive, Fast UI/UX.Notifications via Webhook, Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP) and more by Apprise. \nFast 20 second inverval checks.\n\n",
+    "categories": [],
+    "platform": "linux",
+    "note": "",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "3001:3001/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/app/data",
+        "bind": "!config"
+      }
+    ],
+    "env": [],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [],
+    "cap_add": [],
+    "logo": "https://raw.githubusercontent.com/CorneliousJD/Docker-Templates/master/icons/uptimekuma.png"
+  },
+  {
+    "title": "dashy",
+    "name": "dashy",
+    "image": "lissy93/dashy:latest",
+    "description": "",
+    "categories": [],
+    "platform": "linux",
+    "note": "",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "4000:80/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/app/public",
+        "bind": "!config"
+      }
+    ],
+    "env": [],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [],
+    "cap_add": [],
+    "logo": "https://raw.githubusercontent.com/A75G/docker-templates/master/templates/icons/dashy.png"
+  }
+]
