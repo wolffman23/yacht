@@ -1,8 +1,8 @@
 [
   {
-    "title": "Overseer",
-    "name": "Overseer",
-    "image": "ghcr.io/linuxserver/overseer:latest",
+    "title": "Overseerr",
+    "name": "Overseerr",
+    "image": "ghcr.io/linuxserver/overseerr:latest",
     "description": "",
     "categories": [],
     "platform": "linux",
@@ -16,7 +16,7 @@
     "volumes": [
       {
         "container": "/config",
-        "bind": "!config"
+        "bind": "!config/Overseerr"
       }
     ],
     "env": [],
@@ -44,7 +44,7 @@
     "volumes": [
       {
         "container": "/app/data",
-        "bind": "!config"
+        "bind": "!config/UptimeKuma"
       }
     ],
     "env": [],
@@ -72,7 +72,7 @@
     "volumes": [
       {
         "container": "/app/public",
-        "bind": "!config"
+        "bind": "!config/dashy"
       }
     ],
     "env": [],
@@ -82,5 +82,37 @@
     "sysctls": [],
     "cap_add": [],
     "logo": "https://raw.githubusercontent.com/A75G/docker-templates/master/templates/icons/dashy.png"
+  },
+  {
+    "title": "Nextcloud",
+    "name": "nextcloud",
+    "image": "linuxserver/nextcloud",
+    "description": "",
+    "categories": [],
+    "platform": "linux",
+    "note": "",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "444:443/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "!data/nextcloud/data"
+      },
+      {
+        "container": "/config",
+        "bind": "!config/nextcloud"
+      }
+    ],
+    "env": [],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [],
+    "cap_add": [],
+    "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png"
   }
 ]
