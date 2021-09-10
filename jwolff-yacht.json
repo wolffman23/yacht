@@ -71,7 +71,7 @@
     ],
     "volumes": [
       {
-        "container": "/app/public",
+        "container": "/config",
         "bind": "!config/dashy"
       }
     ],
